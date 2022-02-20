@@ -50,6 +50,7 @@ const (
 	Empty
 	Full
 	Charging
+	NotCharging
 	Discharging
 )
 
@@ -58,6 +59,7 @@ var states = [...]string{
 	Empty:       "Empty",
 	Full:        "Full",
 	Charging:    "Charging",
+	NotCharging: "Not Charging",
 	Discharging: "Discharging",
 }
 
@@ -74,6 +76,7 @@ func newState(name string) (State, error) {
 	return Unknown, fmt.Errorf("Invalid state `%s`", name)
 }
 
+// Battery type represents a single battery entry information.
 // Battery type represents a single battery entry information.
 type Battery struct {
 	// Current battery state.
